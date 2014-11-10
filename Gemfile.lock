@@ -161,6 +161,9 @@ GEM
       json (~> 1.8.1)
       mime-types (>= 1.25, < 3.0)
       rest-client (~> 1.4)
+    stripe-rails (0.3.1)
+      rails (>= 3)
+      stripe
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -186,4 +189,4 @@ DEPENDENCIES
   rspec-rails (~> 3.0.0)
   shoulda-matchers
   spring
-  stripe
+  stripe-rails
