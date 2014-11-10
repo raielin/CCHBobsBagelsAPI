@@ -2,11 +2,11 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :email, null: false
-      t.string :password_digest, null: false
-      t.string :access_token, null: false
-      t.string :token_scope, null: false
-      t.datetime :token_expired_at, null: false
-      t.datetime :token_created_at, null: false
+      t.string :password_digest
+      t.string :access_token
+      t.string :token_scope
+      t.datetime :token_expired_at
+      t.datetime :token_created_at
       t.string :name
 
       t.timestamps null: false

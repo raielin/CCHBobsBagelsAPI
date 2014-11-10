@@ -42,5 +42,8 @@ RSpec.describe User, :type => :model do
     expect(user.errors[:token_created_at]).to include("can't be blank")
   end
 
+  # it { should validate_uniqueness_of(:access_token) }
+  # it { should validate_uniqueness_of(:email) }
+
 
 end
