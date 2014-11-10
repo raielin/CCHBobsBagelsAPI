@@ -1,15 +1,29 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.0.beta2'
-
 gem 'rails-api'
+gem 'jbuilder'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'pg'
+gem 'rack-cors', :require => 'rack/cors'
+
+group :production do
+  gem 'rails_12factor', group: :production
+end
 
 gem 'spring', :group => :development
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+end
 
-gem 'pg'
-
+group :test do
+  gem 'shoulda-matchers', require: false
+end
 
 
 # To use ActiveModel has_secure_password
