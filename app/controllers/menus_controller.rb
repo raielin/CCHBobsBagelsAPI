@@ -1,2 +1,2 @@
-class MenusController < ActionController::API
+class MenusController < ApplicationController
 end

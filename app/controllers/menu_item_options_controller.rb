@@ -1,2 +1,2 @@
-class MenuItemOptionsController < ActionController::API
+class MenuItemOptionsController < ApplicationController
 end

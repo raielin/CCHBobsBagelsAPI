@@ -1,2 +1,2 @@
-class MenuItemsController < ActionController::API
+class MenuItemsController < ApplicationController
 end
