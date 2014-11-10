@@ -47,6 +47,9 @@ GEM
     columnize (0.8.9)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
+    dotenv (1.0.2)
+    dotenv-rails (1.0.2)
+      dotenv (= 1.0.2)
     erubis (2.7.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -169,6 +172,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.2)
+  dotenv-rails
   factory_girl_rails
   faker
   jbuilder
