@@ -1,4 +1,4 @@
-class MenusController < ActionController::API
+class MenusController < ApplicationController
 
   def index
     @menus = Menu.all

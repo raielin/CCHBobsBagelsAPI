@@ -1,4 +1,4 @@
-class MenuItemOptionsController < ActionController::API
+class MenuItemOptionsController < ApplicationController
   def index
     @menu_item_options = MenuItemOption.all
   end
