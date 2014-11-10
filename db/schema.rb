@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 20141110110346) do
 
   create_table "users", force: true do |t|
     t.string   "email",            null: false
-    t.string   "password_digest",  null: false
-    t.string   "access_token",     null: false
-    t.string   "token_scope",      null: false
-    t.datetime "token_expired_at", null: false
-    t.datetime "token_created_at", null: false
+    t.string   "password_digest"
+    t.string   "access_token"
+    t.string   "token_scope"
+    t.datetime "token_expired_at"
+    t.datetime "token_created_at"
     t.string   "name"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
