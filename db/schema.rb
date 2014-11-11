@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141110215105) do
+=======
+ActiveRecord::Schema.define(version: 20141111123002) do
+>>>>>>> ad94a61485c9bf0b70de953fc6dc9263b04c7af8
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +41,42 @@ ActiveRecord::Schema.define(version: 20141110215105) do
     t.string "name"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "order_item_options", force: true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.integer  "order_item_id", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "order_item_options", ["order_item_id"], name: "index_order_item_options_on_order_item_id", using: :btree
+
+  create_table "order_items", force: true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.text     "special_requests"
+    t.integer  "order_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+
+  create_table "orders", force: true do |t|
+    t.decimal  "price",      precision: 8, scale: 2
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "phone"
+    t.integer  "user_id"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+>>>>>>> ad94a61485c9bf0b70de953fc6dc9263b04c7af8
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password_digest"

@@ -5,11 +5,23 @@ class ChargesController < ApplicationController
 
   def create
 
-    @amount = 10
+    token =  params[:access_token]
+
+    begin
+      charge = Stripe::Charge.create(
+        :amount => 1000, # amount in cents, again
+        :currency => "usd",
+        :card => token,
+        :description => "payinguser@example.com"
+      )
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+        redirect_to charges_path
+    end
 
     customer = Stripe::Customer.create(
       email: 'example@stripe.com',
-      card: params[:access_token]
+      card: token
     )
 
     save_stripe_customer_id(user, customer.id)
@@ -20,10 +32,5 @@ class ChargesController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'usd'
     )
-
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to charges_path
-  end
 
 end
