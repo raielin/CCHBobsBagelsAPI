@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
-    @order = order.find(params[:id])
+    @order = Order.find(params[:id])
 
     if @order.update(order_params)
       head :no_content
@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
-    @order = order.find(params[:id])
+    @order = Order.find(params[:id])
     @order.destroy
 
     head :no_content
@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:id, :price, :street, :city, :state, :zipcode, :phone, :user_id)
+    params.require(:order).permit(:id, :price, :street, :city, :state, :zipcode, :phone)
   end
 end
 
