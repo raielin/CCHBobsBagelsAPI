@@ -1,5 +1,4 @@
 class MenusController < ApplicationController
-
   def index
     @menus = Menu.all
   end
@@ -9,7 +8,27 @@ class MenusController < ApplicationController
   end
 
   def create
-    @menu = Menu.create(menu_params)
+    @menu = Menu.new(menu_params)
+    if @menu.save
+      render json: @menu, status: :created, location: @menu
+    else
+      render json: @menu.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @menu = Menu.find(params[:id])
+    if @menu.update(menu_params)
+      head :no_content
+    else
+      render json: @menu.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+    head :no_content
   end
 
   private
