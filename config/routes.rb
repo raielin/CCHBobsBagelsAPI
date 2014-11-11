@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :users
+  resources :orders
+  resources :order_items
+  resources :order_item_options
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
