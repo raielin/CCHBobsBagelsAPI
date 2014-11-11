@@ -3,13 +3,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :users
-<<<<<<< HEAD
+
   resources :charges
-=======
+
   resources :orders
   resources :order_items
   resources :order_item_options
->>>>>>> ad94a61485c9bf0b70de953fc6dc9263b04c7af8
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
