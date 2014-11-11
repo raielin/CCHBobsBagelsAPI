@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :users
+  resources :orders
   resources :order_items
   resources :order_item_options
 
