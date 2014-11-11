@@ -13,6 +13,7 @@ User.delete_all
 Menu.delete_all
 MenuItem.delete_all
 MenuItemOption.delete_all
+MenuOptionsCategory.delete_all
 
 u1 = User.create(email: "test1@test.com", password_digest: "test1", access_token: "access1234", token_scope: "session", token_created_at: Date.today(), token_expired_at: Date.today() )
 
@@ -56,6 +57,15 @@ beverages_list = [
   ["Fountain Soda", 0.00],
   ["Hot Coffee", 0.00],
   ["Latte", 0.00]
+]
+
+categories_list = [
+  "Bagel",
+  "Vegetables",
+  "Toppings",
+  "Cream Cheese",
+  "Cheese",
+  "Protein"
 ]
 
 beverages_options = [
