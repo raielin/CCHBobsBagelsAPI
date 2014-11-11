@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :users
   resources :menus
   resources :menu_items
-  resources :menu_item_options
+  resources :menu_options
+  resources :menu_options_categories
   resources :orders
   resources :order_items
   resources :order_item_options
