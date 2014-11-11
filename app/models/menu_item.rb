@@ -1,4 +1,4 @@
 class MenuItem < ActiveRecord::Base
   belongs_to :menu
-  has_many :menu_item_options
+  # has_many :menu_options
 end
