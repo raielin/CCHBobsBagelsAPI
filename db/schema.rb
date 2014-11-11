@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110221303) do
+ActiveRecord::Schema.define(version: 20141111123002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,27 @@ ActiveRecord::Schema.define(version: 20141110221303) do
   create_table "menus", force: true do |t|
     t.string "name"
   end
+
+  create_table "order_item_options", force: true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.integer  "order_item_id", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "order_item_options", ["order_item_id"], name: "index_order_item_options_on_order_item_id", using: :btree
+
+  create_table "order_items", force: true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.text     "special_requests"
+    t.integer  "order_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
 
   create_table "orders", force: true do |t|
     t.decimal  "price",      precision: 8, scale: 2
