@@ -22,9 +22,9 @@ o2 = Order.create(price: 50.99, street: "57 Arch", city: "Westborough", state: "
 
 
 
-oi1 = OrderItem.create(name: "The Sommerville", price: 6.75)
-oi2 = OrderItem.create(name: "Small Bagel Box (12 bagels)", price: 12.00)
-oi3 = OrderItem.create(name: "Hot Coffee", price: 0.00)
+oi1 = OrderItem.create(name: "The Sommerville", price: 6.75, order_id: o1.id)
+oi2 = OrderItem.create(name: "Small Bagel Box (12 bagels)", price: 12.00, order_id: o1.id)
+oi3 = OrderItem.create(name: "Hot Coffee", price: 0.00, order_id: o2.id)
 
 oio1 = OrderItemOption.create(name: "Smoked Salmon", price: 3.50, order_item_id: oi1.id)
 oio2 = OrderItemOption.create(name: "Whole Wheat Bagel", price: 0.00, order_item_id: oi1.id)
