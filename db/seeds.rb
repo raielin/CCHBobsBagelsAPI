@@ -5,4 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-u1 = User.create(email: "test1@test.com", password_digest: "test1", access_token: "access1234", token_scope: "session", token_created_at: Date.today(), token_expired_at: Date.today() )
+
+OrderItem.delete_all
+OrderItemOption.delete_all
+
+# u1 = User.create(email: "test1@test.com", password_digest: "test1", access_token: "access1234", token_scope: "session", token_created_at: Date.today(), token_expired_at: Date.today() )
+
+
+
+oi1 = OrderItem.create(name: "The Sommerville", price: 6.75)
+oi2 = OrderItem.create(name: "Small Bagel Box (12 bagels)", price: 12.00)
+oi3 = OrderItem.create(name: "Hot Coffee", price: 0.00)
+
+oio1 = OrderItemOption.create(name: "Smoked Salmon", price: 3.50, order_item_id: oi1.id)
+oio2 = OrderItemOption.create(name: "Whole Wheat Bagel", price: 0.00, order_item_id: oi1.id)
+oio3 = OrderItemOption.create(name: "Small", price: 2.00, order_item_id: oi3.id)
