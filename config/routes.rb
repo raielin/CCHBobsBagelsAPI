@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :charges
-
   resources :orders
   resources :order_items
   resources :order_item_options
