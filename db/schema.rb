@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20141110215105) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",            null: false
+    t.string   "email"
     t.string   "password_digest"
     t.string   "access_token"
     t.string   "token_scope"

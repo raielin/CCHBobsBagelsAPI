@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :email, presence: true
+  # validates :email, presence: true
   # validates :password_digest
   # validates :access_token
   # validates :token_scope
