@@ -1,1 +1,1 @@
-json.extrac! @menu, :id, :name
+json.extract! @menu, :id, :name
