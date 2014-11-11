@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :menus
   resources :menu_items
   resources :menu_item_options
+  resources :orders
+  resources :order_items
+  resources :order_item_options
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

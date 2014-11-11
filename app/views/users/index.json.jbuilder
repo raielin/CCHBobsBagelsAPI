@@ -1,5 +1,7 @@
 json.users @users do |user|
+  json.id user.id
+  json.email user.email
+  json.access_token user.access_token
   json.name user.name
-  json.password_digest user.password_digest
-  json.token_scope user.token_scope
+
 end
