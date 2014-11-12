@@ -1,4 +1,5 @@
 class MenusController < ApplicationController
+
   def index
     @menus = Menu.all
   end
@@ -35,4 +36,5 @@ class MenusController < ApplicationController
   def menu_params
     params.require(:menu).permit(:name)
   end
+
 end

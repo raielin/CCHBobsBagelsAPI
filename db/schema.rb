@@ -71,19 +71,21 @@ ActiveRecord::Schema.define(version: 20141111164329) do
   add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
 
   create_table "orders", force: true do |t|
-    t.decimal  "price",      precision: 8, scale: 2
+    t.decimal  "price",        precision: 8, scale: 2
     t.string   "street"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
     t.string   "phone"
+    t.string   "access_token"
+    t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",            null: false
+    t.string   "email"
     t.string   "password_digest"
     t.string   "access_token"
     t.string   "token_scope"
@@ -92,6 +94,7 @@ ActiveRecord::Schema.define(version: 20141111164329) do
     t.string   "name"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "customer_id"
   end
 
   add_index "users", ["access_token"], name: "index_users_on_access_token", unique: true, using: :btree

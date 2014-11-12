@@ -1,0 +1,2 @@
+class MenuItemOptionsController < ApplicationController
+end
