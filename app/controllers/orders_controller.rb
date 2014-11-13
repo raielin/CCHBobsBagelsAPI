@@ -12,7 +12,6 @@ class OrdersController < ApplicationController
     Stripe.api_key = ENV["STRIPE_SECRET_TEST"]
     token = params[:order][:access_token]
     price = (params[:order][:price].to_i)*100
-    binding.pry
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
       charge = Stripe::Charge.create(
