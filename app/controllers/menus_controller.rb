@@ -1,7 +1,7 @@
 class MenusController < ApplicationController
 
   def index
-    @menus = Menu.all
+    @menus = Menu.includes(:menu_items).all
   end
 
   def show
