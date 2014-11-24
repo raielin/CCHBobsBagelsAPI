@@ -9,6 +9,7 @@ gem 'bcrypt', '~> 3.1.2'
 gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'responders', '~> 2.0.2'
+gem 'newrelic_rpm'
 
 group :production do
   gem 'rails_12factor', group: :production
