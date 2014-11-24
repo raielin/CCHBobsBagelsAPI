@@ -1,7 +1,7 @@
 class OrderItemsController < ApplicationController
 
   def index
-    @order_items = OrderItem.all
+    @order_items = OrderItem.includes(:order_item_options).all
   end
 
   def show
