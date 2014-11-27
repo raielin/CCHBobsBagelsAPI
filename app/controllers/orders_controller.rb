@@ -9,9 +9,12 @@ class OrdersController < ApplicationController
 
  def create
     @order = Order.create(order_params)
+    # Moved to model
     Stripe.api_key = ENV["STRIPE_SECRET_TEST"]
     token = params[:order][:access_token]
     price = (params[:order][:price].to_i)*100
+    # charge_customer(token, price)
+    # Moved to order model
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
       charge = Stripe::Charge.create(
